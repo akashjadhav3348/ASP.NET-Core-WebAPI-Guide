@@ -21,11 +21,11 @@ Navigate to:
 Tools → NuGet Package Manager → Manage NuGet Packages for Solution → Browse
 ```
 Search and install the following packages:
-- `Microsoft.EntityFrameworkCore (8.0.1)`
-- `Microsoft.EntityFrameworkCore.Tools (8.0.1)`
-- `Microsoft.EntityFrameworkCore.Design (8.0.1)`
-- `Microsoft.VisualStudio.Web.CodeGeneration.Design (7.x - 8.x)`
-- `Microsoft.EntityFrameworkCore.SqlServer (8.0.1)`
+- `Microsoft.EntityFrameworkCore (8.0.0)`
+- `Microsoft.EntityFrameworkCore.Tools (8.0.0)`
+- `Microsoft.EntityFrameworkCore.Design (8.0.0)`
+- `Microsoft.VisualStudio.Web.CodeGeneration.Design (9.0.0)`
+- `Microsoft.EntityFrameworkCore.SqlServer (8.0.0)`
 
 ### 5️⃣ Setup SQL Server Database
 - Open **Microsoft SQL Server Management Studio (SSMS)**.

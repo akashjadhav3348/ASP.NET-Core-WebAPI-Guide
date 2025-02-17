@@ -1,25 +1,31 @@
 🚀 Step-by-Step Guide: ASP.NET Core Web API with Entity Framework Core & SQL Server
+
 1️⃣ Open Visual Studio 2022
+
 2️⃣ Create a New Project
 Search for ASP.NET Core Web API in the template list.
 Select the template and click Next.
+
 3️⃣ Name Your Project
 Enter your desired Project Name.
 Click Create.
+
 4️⃣ Install Required NuGet Packages
 Navigate to:
 Tools → NuGet Package Manager → Manage NuGet Packages for Solution → Browse
 🔍 Search and install the following packages:
-📦 Microsoft.EntityFrameworkCore (Version 8.0.1)
-📦 Microsoft.EntityFrameworkCore.Tools (Version 8.0.1)
-📦 Microsoft.EntityFrameworkCore.Design (Version 8.0.1)
-📦 Microsoft.VisualStudio.Web.CodeGeneration.Design (Version 7.x - 8.x)
+📦 Microsoft.EntityFrameworkCore (Version 8.0.0)
+📦 Microsoft.EntityFrameworkCore.Tools (Version 8.0.0)
+📦 Microsoft.EntityFrameworkCore.Design (Version 8.0.0)
+📦 Microsoft.VisualStudio.Web.CodeGeneration.Design (Version 9.0.0)
 📦 Microsoft.EntityFrameworkCore.SqlServer (Version 8.0.1)
+
 5️⃣ Setup SQL Server Database
 Open Microsoft SQL Server Management Studio (SSMS).
 🔗 Connect to your SQL Server.
 🏗 Create a new Database.
 🗄 Create a Table and insert a sample record.
+
 6️⃣ Connect Database in Visual Studio
 Navigate to:
 View → Server Explorer → Data Connection → Connect to Database
@@ -30,6 +36,8 @@ Database Name 📌: (Enter your database name)
 Test Connection → OK ✅
 Copy the Connection String:
 Data Source=AKASH\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True;Trust Server Certificate=True
+
+
 7️⃣ Configure appsettings.json
 Navigate to Solution Explorer → Open appsettings.json and update the Connection String:
 {
@@ -44,12 +52,16 @@ Navigate to Solution Explorer → Open appsettings.json and update the Connectio
 "DefaultConnection": "Server=[Enter Server Name];Database=[Enter Database Name];Trusted_Connection=True;TrustServerCertificate=true;"
 }
 }
+
+
 8️⃣ Scaffold Database Context & Models
 Navigate to:
 Tools → NuGet Package Manager → Package Manager Console
 Run the following command:
 cd [YourProjectName]
 dotnet ef dbcontext scaffold "Data Source=[Enter Server Name];Initial Catalog=[Enter Database Name];Integrated Security=True;Trust Server Certificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Models --force
+
+
 9️⃣ Register Database Context in Program.cs
 Navigate to Solution Explorer → Open Program.cs
 Add the following:
@@ -59,12 +71,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<[DatabaseName]Context>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 var app = builder.Build();
+
+
 🔟 Add API Controller for CRUD Operations
 Navigate to Solution Explorer →
 Right-click on Controllers → Add → Controller
 Select: "API Controller with actions, using Entity Framework"
 Choose your Model Class & DbContext Class
 Click Add ✅
+
+
+
 🎉 Your ASP.NET Core Web API is now set up! 🎉
 ✅ Run the application, test API endpoints using Postman or Swagger UI! 🚀
 
